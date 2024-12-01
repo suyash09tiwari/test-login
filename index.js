@@ -13,7 +13,7 @@ require('./db/conn');
 // const User = require('./model/userSchema');'
 
 app.use(cors({
-    origin: true, // Allow all origins (not recommended for production)
+    origin: true, 
     credentials: true
   }));
 
