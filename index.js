@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
+const cors = require("cors")
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
@@ -9,7 +10,12 @@ app.use(cookieParser());
 dotenv.config({ path: './config.env' });
 
 require('./db/conn');
-// const User = require('./model/userSchema');
+// const User = require('./model/userSchema');'
+
+app.use(cors({
+    origin: true, // Allow all origins (not recommended for production)
+    credentials: true
+  }));
 
 app.use(express.json());
 
